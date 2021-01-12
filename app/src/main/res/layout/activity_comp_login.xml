@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".compLogin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:gravity="center"
+            android:layout_marginTop="70dp"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:id="@+id/textLogin"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/textLogin"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:id="@+id/emailLayout">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Company Email"
+                android:inputType="textEmailAddress"
+                android:id="@+id/etCompEmailLogin"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/emailLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:id="@+id/passLayout"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="Enter Password"
+                android:id="@+id/etCompPassLogin"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/passLayout"
+            android:layout_marginTop="20dp"
+            android:text="Login"
+            android:textSize="18sp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:id="@+id/btnLogin"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="New User ...! Click Here"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_below="@+id/btnLogin"
+            android:id="@+id/textNewUser"/>
+
+
+    </RelativeLayout>
+</ScrollView>
