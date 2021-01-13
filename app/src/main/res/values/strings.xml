@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Freshers Live Company</string>
     <string name="co_id">co_id</string>
+    <string name="general">General</string>
+    <string name="application">Application</string>
+    <string name="job">Job</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="comunication">Comunication</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="about_us">About Us</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open_navigation_drawer">Open Navigation Drawer</string>
+    <string name="close_navigation_drawer">Close Navigation Drawer</string>
 </resources>
