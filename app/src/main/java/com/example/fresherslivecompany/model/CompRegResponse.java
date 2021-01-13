@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class CompRegResponse {
 
-    @SerializedName("error")
+
     private String error;
-    @SerializedName("massage")
+
     private String message;
 
     public CompRegResponse(String error, String message) {
