@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FreshersLiveCompany">
-        <activity android:name=".compLogin">
+        <activity android:name=".activity.compLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".compReg"></activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activity.compReg"></activity>
+        <activity android:name=".activity.MainActivity" />
     </application>
 
 </manifest>

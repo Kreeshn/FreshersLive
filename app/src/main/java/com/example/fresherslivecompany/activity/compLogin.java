@@ -1,4 +1,4 @@
-package com.example.fresherslivecompany;
+package com.example.fresherslivecompany.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.fresherslivecompany.R;
 
 public class compLogin extends AppCompatActivity {
     TextView text_newuser;
