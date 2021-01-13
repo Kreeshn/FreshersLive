@@ -1,4 +1,4 @@
-package com.example.fresherslivecompany.retrofitutil;
+package com.example.fresherslivecompany.apputil;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -16,7 +16,7 @@ public class SharedPrefManager {
         this.context = context;
     }
 
-    void SaveCompUser(UserComp userComp){
+    public void saveCompUser(UserComp userComp){
         sharedPreferences=context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
         editor=sharedPreferences.edit();
         editor.putInt("co_id",userComp.getCo_id());
@@ -26,7 +26,7 @@ public class SharedPrefManager {
         editor.apply();
     }
 
-    boolean isLoggedIn(){
+    public boolean isLoggedIn(){
         sharedPreferences=context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
         return sharedPreferences.getBoolean("logged", false);
     }
@@ -40,11 +40,11 @@ public class SharedPrefManager {
         );
     }
 
-    void logout(){
+    public  void logout(){
         sharedPreferences=context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
         editor=sharedPreferences.edit();
         editor.clear();
-        editor.apply();
+         editor.apply();
     }
 
 }

@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.fresherslivecompany.R;
 import com.example.fresherslivecompany.model.CompLoginResponse;
 import com.example.fresherslivecompany.retrofitutil.RetrofitClient;
+import com.example.fresherslivecompany.apputil.SharedPrefManager;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,10 +24,12 @@ public class compLogin extends AppCompatActivity {
     TextView text_newuser;
     EditText etcompEmailLogin, etcompPassLogin;
     Button btnLogin;
+    SharedPrefManager sharedPrefManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comp_login);
+        sharedPrefManager = new SharedPrefManager(getApplicationContext());
         etcompEmailLogin = (EditText)findViewById(R.id.etCompEmailLogin);
         etcompPassLogin = (EditText)findViewById(R.id.etCompPassLogin);
         btnLogin = (Button) findViewById(R.id.btnLogin);
@@ -72,15 +75,17 @@ public class compLogin extends AppCompatActivity {
         call.enqueue(new Callback<CompLoginResponse>() {
             @Override
             public void onResponse(Call<CompLoginResponse> call, Response<CompLoginResponse> response) {
-                String msg = response.body().getMessage();
-                if (response.isSuccessful()){
-                    Intent intent = new Intent(compLogin.this, MainActivity.class);
-                    intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK|intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
-                    Toast.makeText(compLogin.this,msg,Toast.LENGTH_SHORT).show();
+                CompLoginResponse compLoginResponse = response.body();
+                    if (response.isSuccessful()){
+                           // sharedPrefManager.saveCompUser(compLoginResponse.getUserComp());
+                            Intent intent = new Intent(compLogin.this, MainActivity.class);
+                            intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK|intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                            Toast.makeText(compLogin.this,compLoginResponse.getMessage(),Toast.LENGTH_SHORT).show();
+
                 }
                 else {
-                    Toast.makeText(compLogin.this,msg,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(compLogin.this,compLoginResponse.getMessage(),Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -89,5 +94,15 @@ public class compLogin extends AppCompatActivity {
                 Toast.makeText(compLogin.this,t.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (sharedPrefManager.isLoggedIn()){
+            Intent intent = new Intent(compLogin.this, MainActivity.class);
+            intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK|intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
     }
 }
