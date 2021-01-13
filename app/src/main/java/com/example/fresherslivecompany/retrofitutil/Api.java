@@ -1,5 +1,6 @@
 package com.example.fresherslivecompany.retrofitutil;
 
+import com.example.fresherslivecompany.model.CompLoginResponse;
 import com.example.fresherslivecompany.model.CompRegResponse;
 
 import retrofit2.Call;
@@ -17,5 +18,12 @@ public interface Api {
             @Field("cemail") String cemail,
             @Field("cpassword") String cpassword,
             @Field("ccontact") String ccontact
+    );
+
+    @FormUrlEncoded
+    @POST("compLogin.php")
+    Call<CompLoginResponse> CompLogin(
+            @Field("cemail") String cemail,
+            @Field("cpassword") String cpassword
     );
 }
