@@ -15,7 +15,9 @@ import android.widget.Toast;
 
 import com.example.fresherslivecompany.R;
 import com.example.fresherslivecompany.adapter.CompUserAdapter;
+import com.example.fresherslivecompany.adapter.JobAdapter;
 import com.example.fresherslivecompany.model.FetchJobDetailsResponse;
+import com.example.fresherslivecompany.model.JobComp;
 import com.example.fresherslivecompany.model.UserComp;
 import com.example.fresherslivecompany.retrofitutil.RetrofitClient;
 
@@ -27,7 +29,7 @@ import retrofit2.Response;
 
 public class JobFragment extends Fragment {
     private RecyclerView recyclerView;
-    private List<UserComp> userCompList;
+    private List<JobComp> jobCompList;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,16 +49,16 @@ public class JobFragment extends Fragment {
         Call<FetchJobDetailsResponse> call = RetrofitClient
                 .getInstance()
                 .getApi()
-                .CompDetails();
+                .JObDetails();
         call.enqueue(new Callback<FetchJobDetailsResponse>() {
             @Override
             public void onResponse(Call<FetchJobDetailsResponse> call, Response<FetchJobDetailsResponse> response) {
                 if(response.isSuccessful()){
-                        userCompList= response.body().getCompList();
-                        recyclerView.setAdapter(new CompUserAdapter(getActivity(),userCompList));
+                        jobCompList= response.body().getJobCompList();
+                        recyclerView.setAdapter(new JobAdapter(getActivity(),jobCompList));
                 }
                 else {
-                    Toast.makeText(getActivity(),response.body().getError(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),response.body().getResult_code(),Toast.LENGTH_SHORT).show();
                 }
             }
 

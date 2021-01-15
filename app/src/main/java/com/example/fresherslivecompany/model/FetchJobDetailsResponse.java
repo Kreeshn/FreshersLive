@@ -5,28 +5,28 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class FetchJobDetailsResponse {
-    @SerializedName("comp")
-    List<UserComp> compList;
-    String error;
+    @SerializedName("jobs")
+    List<JobComp> jobCompList;
+    String result_code;
 
-    public FetchJobDetailsResponse(List<UserComp> compList, String error) {
-        this.compList = compList;
-        this.error = error;
+    public FetchJobDetailsResponse(List<JobComp> jobCompList, String result_code) {
+        this.jobCompList = jobCompList;
+        this.result_code = result_code;
     }
 
-    public List<UserComp> getCompList() {
-        return compList;
+    public List<JobComp> getJobCompList() {
+        return jobCompList;
     }
 
-    public void setCompList(List<UserComp> compList) {
-        this.compList = compList;
+    public void setJobCompList(List<JobComp> jobCompList) {
+        this.jobCompList = jobCompList;
     }
 
-    public String getError() {
-        return error;
+    public String getResult_code() {
+        return result_code;
     }
 
-    public void setError(String error) {
-        this.error = error;
+    public void setResult_code(String result_code) {
+        this.result_code = result_code;
     }
 }

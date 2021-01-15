@@ -31,4 +31,7 @@ public interface Api {
 
     @GET("fetchCompDetails.php")
     Call<FetchJobDetailsResponse> CompDetails();
+
+    @GET("fetchJobDetails.php")
+    Call<FetchJobDetailsResponse> JObDetails();
 }

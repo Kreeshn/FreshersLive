@@ -100,7 +100,8 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id){
             case R.id.logout:
-                Toast.makeText(MainActivity.this, "You Clicked Logout", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, compLogin.class));
+                finish();
                 break;
         }
         if(toggle.onOptionsItemSelected(item)){
