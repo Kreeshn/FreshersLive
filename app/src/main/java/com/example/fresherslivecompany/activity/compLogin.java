@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fresherslivecompany.R;
+import com.example.fresherslivecompany.apputil.SharedPrefManager;
 import com.example.fresherslivecompany.model.CompLoginResponse;
 import com.example.fresherslivecompany.retrofitutil.RetrofitClient;
 
@@ -23,10 +24,12 @@ public class compLogin extends AppCompatActivity {
     TextView text_newuser;
     EditText etcompEmailLogin, etcompPassLogin;
     Button btnLogin;
+    SharedPrefManager sharedPrefManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comp_login);
+        sharedPrefManager = new SharedPrefManager(this);
         etcompEmailLogin = (EditText)findViewById(R.id.etCompEmailLogin);
         etcompPassLogin = (EditText)findViewById(R.id.etCompPassLogin);
         btnLogin = (Button) findViewById(R.id.btnLogin);
@@ -75,9 +78,13 @@ public class compLogin extends AppCompatActivity {
                 CompLoginResponse compLoginResponse = response.body();
                     if (response.isSuccessful()){
                         if(compLoginResponse.getError().equals("200")){
+                            sharedPrefManager.updateCompLoginStatus(true);
+                            sharedPrefManager.saveidofComp(compLoginResponse.getId());
+                            sharedPrefManager.saveNameofComp(compLoginResponse.getCname());
+                            sharedPrefManager.saveEmailofComp(compLoginResponse.getCemail());
                             Intent intent = new Intent(compLogin.this, MainActivity.class);
                             startActivity(intent);
-                            Toast.makeText(compLogin.this,compLoginResponse.getMessage(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(compLogin.this, compLoginResponse.getMessage() ,Toast.LENGTH_SHORT).show();
                         }
                 }
                 else {
@@ -95,6 +102,10 @@ public class compLogin extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
+        if(sharedPrefManager.isCompLogin()){
+            Intent intent = new Intent(compLogin.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 }

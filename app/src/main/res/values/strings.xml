@@ -8,6 +8,14 @@
     <string name="comunication">Comunication</string>
     <string name="contact_us">Contact Us</string>
     <string name="about_us">About Us</string>
+
+    <!-- SharedPreference -->
+    <string name="pref_file_key">pref_file_key</string>
+    <string name="pref_is_comp_login">isComplogin</string>
+    <string name="pref_id_of_comp">idofcomp</string>
+    <string name="pref_name_of_comp">nameofcomp</string>
+    <string name="pref_email_of_comp">emailofcomp</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="open_navigation_drawer">Open Navigation Drawer</string>

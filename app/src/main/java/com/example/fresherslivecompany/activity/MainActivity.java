@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.fresherslivecompany.R;
+import com.example.fresherslivecompany.apputil.SharedPrefManager;
 import com.example.fresherslivecompany.fragment.AboutUsFragment;
 import com.example.fresherslivecompany.fragment.ApplicationFragment;
 import com.example.fresherslivecompany.fragment.ContactUsFragment;
@@ -31,11 +32,13 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
+    SharedPrefManager sharedPrefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sharedPrefManager =  new SharedPrefManager(this);
         toolbar = (Toolbar) findViewById(R.id.compToolbar);
         setSupportActionBar(toolbar);
 
@@ -100,6 +103,9 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id){
             case R.id.logout:
+                if(sharedPrefManager.isCompLogin()){
+                    sharedPrefManager.updateCompLoginStatus(false);
+                }
                 startActivity(new Intent(MainActivity.this, compLogin.class));
                 finish();
                 break;
