@@ -7,23 +7,24 @@ public class SharedPrefManager {
     private Context context;
     private SharedPreferences sharedPreferences;
 
-    public SharedPrefManager(Context context, SharedPreferences sharedPreferences) {
+    public SharedPrefManager(Context context) {
         this.context = context;
-        this.sharedPreferences = sharedPreferences;
+        sharedPreferences = context.getSharedPreferences("pref_file_key", context.MODE_PRIVATE);
     }
+
     public boolean isCompLogin(){
         return sharedPreferences.getBoolean("isAdminlogin", false);
     }
 
-    public void updateCompLoginStatus(Boolean status){
+    public void updateAdminLoginStatus(Boolean status){
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("isAdminlogin", status);
         editor.apply();
     }
 
-    public void saveidofAdmin(String id){
+    public void saveidofAdmin(int id){
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("idofadmin",id);
+        editor.putInt("idofadmin",id);
         editor.apply();
     }
     public void saveEmailofAdmin(String aemail){
