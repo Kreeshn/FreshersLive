@@ -71,6 +71,7 @@ public class AdminLoginActivity extends AppCompatActivity {
                     if(adminLoginResponse.getError().equals("200")){
                         sharedPrefManager.updateAdminLoginStatus(true);
                         sharedPrefManager.saveidofAdmin(adminLoginResponse.getAid());
+                        sharedPrefManager.saveNameofAdmin(adminLoginResponse.getA_name());
                         sharedPrefManager.saveEmailofAdmin(adminLoginResponse.getA_email());
                         Intent intent = new Intent(AdminLoginActivity.this, MainActivity.class);
                         startActivity(intent);

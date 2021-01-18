@@ -32,6 +32,14 @@ public class SharedPrefManager {
         editor.putString("emailofadmin",aemail);
         editor.apply();
     }
+    public void saveNameofAdmin(String aname){
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("nameofadmin",aname);
+        editor.apply();
+    }
+    public String getNameofAdmin(){
+        return sharedPreferences.getString("nameofadmin","unknown");
+    }
     public String getEmailofAdmin(){
         return sharedPreferences.getString("emailofadmin","unknown");
     }

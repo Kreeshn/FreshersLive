@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="General">
+        <menu>
+            <item
+                android:id="@+id/compReq"
+                android:title="Company Request"/>
+            <item
+                android:id="@+id/studentReq"
+                android:title="Student Request"/>
+
+        </menu>
+    </item>
+    <item android:title="Comunication">
+        <menu>
+            <item
+                android:id="@+id/adminContactUs"
+                android:title="Contact Us"/>
+            <item
+                android:id="@+id/adminAboutUs"
+                android:title="About Us"/>
+        </menu>
+    </item>
+</menu>
