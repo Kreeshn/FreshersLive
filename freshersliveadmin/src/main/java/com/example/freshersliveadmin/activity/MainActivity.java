@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.example.freshersliveadmin.R;
 import com.example.freshersliveadmin.apputil.SharedPrefManager;
+import com.example.freshersliveadmin.fragment.CompReqFragment;
+import com.example.freshersliveadmin.fragment.StudentRequestFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -50,18 +52,17 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment = null;
                 switch (id){
                     case R.id.compReq :
-                        Toast.makeText(MainActivity.this,"compreq",Toast.LENGTH_SHORT).show();
+                        fragment = new CompReqFragment();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.studentReq :
-                     //   fragment = new JobFragment();
-                        Toast.makeText(MainActivity.this,"student",Toast.LENGTH_SHORT).show();
+                        fragment = new StudentRequestFragment();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                 }
 
-            /*    FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.fragmentContainer,fragment).commit(); */
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragmentContainer,fragment).commit();
                 return true;
             }
         });
