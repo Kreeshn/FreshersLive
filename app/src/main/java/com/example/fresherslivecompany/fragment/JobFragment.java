@@ -1,9 +1,11 @@
 package com.example.fresherslivecompany.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,6 +22,7 @@ import com.example.fresherslivecompany.model.FetchJobDetailsResponse;
 import com.example.fresherslivecompany.model.JobComp;
 import com.example.fresherslivecompany.model.UserComp;
 import com.example.fresherslivecompany.retrofitutil.RetrofitClient;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -30,6 +33,7 @@ import retrofit2.Response;
 public class JobFragment extends Fragment {
     private RecyclerView recyclerView;
     private List<JobComp> jobCompList;
+    private FloatingActionButton fab;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -40,7 +44,17 @@ public class JobFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        fab = (FloatingActionButton) view.findViewById(R.id.fab_CreateJob) ;
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatActivity activity = (AppCompatActivity)v.getContext();
+                CreateJobFragment createJobFragment = new CreateJobFragment();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, createJobFragment)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
         recyclerView=view.findViewById(R.id.compJobRecylerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

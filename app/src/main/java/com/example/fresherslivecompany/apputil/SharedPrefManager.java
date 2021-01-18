@@ -3,8 +3,6 @@ package com.example.fresherslivecompany.apputil;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.example.fresherslivecompany.model.UserComp;
-
 public class SharedPrefManager {
     private Context context;
     private SharedPreferences sharedPreferences;
@@ -45,5 +43,8 @@ public class SharedPrefManager {
     }
     public String getEmailofComp(){
         return sharedPreferences.getString("emailofcomp","unknown");
+    }
+    public int getIdofComp(){
+        return sharedPreferences.getInt("idofcomp", -1);
     }
 }

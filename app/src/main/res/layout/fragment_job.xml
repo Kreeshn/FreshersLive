@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="bottom"
     tools:context=".fragment.JobFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/compJobRecylerView"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_CreateJob"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/compJobRecylerView"/>
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="20dp"
+        app:borderWidth="4dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/icon_add"
+        app:backgroundTint="#8293F3"
+        app:elevation="8dp" />
 
 </FrameLayout>

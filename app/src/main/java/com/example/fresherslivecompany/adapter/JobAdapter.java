@@ -1,6 +1,8 @@
 package com.example.fresherslivecompany.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,9 +10,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fresherslivecompany.R;
+import com.example.fresherslivecompany.activity.MainActivity;
+import com.example.fresherslivecompany.fragment.ApplicationFragment;
+import com.example.fresherslivecompany.fragment.JobDetailsFragment;
 import com.example.fresherslivecompany.model.JobComp;
 import com.example.fresherslivecompany.model.UserComp;
 
@@ -44,8 +52,16 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.viewHolder>{
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String ClickedItem = jobCompList.get(position).getProfile()+"\n"+jobCompList.get(position).getCo_name();
-                Toast.makeText(context,ClickedItem,Toast.LENGTH_SHORT).show();
+
+                AppCompatActivity activity = (AppCompatActivity)v.getContext();
+                Bundle bundle = new Bundle();
+                bundle.putInt("jobid",jobCompList.get(position).getJob_id());
+                JobDetailsFragment jobDetailsFragment = new JobDetailsFragment();
+                jobDetailsFragment.setArguments(bundle);
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, jobDetailsFragment)
+                        .addToBackStack(null)
+                        .commit();
+
             }
         });
     }

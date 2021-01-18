@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.CreateJobFragment">
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create New Job"
+                android:gravity="center"
+                android:layout_marginTop="25dp"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:id="@+id/textCreate"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/textCreate"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/jobProfLayout">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Job Profile"
+                    android:inputType="text"
+                    android:id="@+id/etJobProfCJ"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/chkParttimeCJ"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_below="@+id/jobProfLayout"
+                android:text="Part Time Allowd"/>
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Select Work Type"
+               android:layout_marginTop="10dp"
+               android:layout_below="@id/chkParttimeCJ"
+               android:textStyle="bold"
+               android:layout_marginLeft="30dp"
+               android:layout_marginRight="30dp"
+               android:id="@+id/selectWorktypeTitle"
+               android:textColor="@color/black"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rgWorktypeCJ"
+                android:layout_below="@+id/selectWorktypeTitle"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp">
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Work From Home"
+                    android:id="@+id/rwfhCJ"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="In Office"
+                    android:checked="true"
+                    android:id="@+id/rinOfficeCJ"/>
+
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/rgWorktypeCJ"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/jobOpeningLayout">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Number of Opening"
+                    android:inputType="number"
+                    android:id="@+id/etNOOCJ"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/jobOpeningLayout"
+                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/jobStartDateLayout">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Start Date"
+                    android:inputType="date"
+                    android:id="@+id/etStartDateCJ"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/jobStartDateLayout"
+                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/jobDurationLayout">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Duration in Month"
+                    android:inputType="number"
+                    android:id="@+id/etDurationCJ"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/jobDurationLayout"
+                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/jobRespoLayout">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:hint="Enter Responsibility"
+                    android:gravity="start"
+                    android:inputType="textMultiLine"
+                    android:id="@+id/etRespoCJ"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Sallary Type"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/jobRespoLayout"
+                android:textStyle="bold"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/selectSallaryTitle"
+                android:textColor="@color/black"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rgSallaryCJ"
+                android:layout_below="@+id/selectSallaryTitle"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp">
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Unpaind"
+                    android:id="@+id/rUPCJ"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Based on Performance"
+                    android:checked="true"
+                    android:id="@+id/rBOPCJ"/>
+
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/rgSallaryCJ"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/jobSkillLayout">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Required Skill"
+                    android:gravity="start"
+                    android:inputType="textMultiLine"
+                    android:id="@+id/etSkillCJ"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/jobSkillLayout"
+                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/jobass1Layout">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Assesment Question"
+                    android:gravity="start"
+                    android:inputType="textMultiLine"
+                    android:id="@+id/etass1CJ"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/jobass1Layout"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/jobass2Layout">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Assesment Question"
+                    android:gravity="start"
+                    android:inputType="textMultiLine"
+                    android:id="@+id/etass2CJ"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/jobass2Layout"
+                android:layout_marginTop="20dp"
+                android:text="Create"
+                android:textSize="18sp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginBottom="70dp"
+                android:layout_marginRight="70dp"
+                android:id="@+id/btnCJ"/>
+
+
+        </RelativeLayout>
+
+
+</ScrollView>

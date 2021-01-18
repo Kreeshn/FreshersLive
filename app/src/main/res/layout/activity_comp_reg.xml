@@ -26,7 +26,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_below="@+id/textCreate"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_centerInParent="true"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
@@ -35,6 +34,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+               
                 android:hint="Enter Company Name"
                 android:inputType="text"
                 android:id="@+id/etCompName"/>
@@ -45,7 +45,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_below="@+id/nameLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_centerInParent="true"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
@@ -54,6 +53,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+               
                 android:hint="Enter Company Email"
                 android:inputType="textEmailAddress"
                 android:id="@+id/etCompEmail"/>
@@ -64,7 +64,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_below="@+id/emailLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_centerInParent="true"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
@@ -75,6 +74,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+               
                 android:inputType="textPassword"
                 android:hint="Enter Password"
                 android:id="@+id/etCompPass"/>
@@ -85,7 +85,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_below="@+id/passLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_centerInParent="true"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
@@ -94,6 +93,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+               
                 android:inputType="number"
                 android:hint="Enter Contact Number"
                 android:id="@+id/etCompNum"/>
@@ -104,7 +104,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_below="@+id/numLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_centerInParent="true"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
@@ -114,6 +113,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:inputType="textMultiLine"
+               
                 android:hint="Enter Company Description"
                 android:gravity="start"
                 android:id="@+id/etCompDesc"/>

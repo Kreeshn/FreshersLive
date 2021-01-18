@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/container_four_round_corner"
+    android:layout_margin="5dp"
+    tools:context=".fragment.JobDetailsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            //Job Profile
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/jobDetailsProfile"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Content Writing"
+                android:textColor="@color/black"/>
+            //Company Name
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tony Creation"
+                android:id="@+id/jobDetailsCompName"
+                android:layout_below="@+id/jobDetailsProfile"
+                android:textColor="@color/black"/>
+            //Home Icon
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/ican_home"
+                android:src="@drawable/ic_baseline_home_24"
+                android:layout_below="@+id/jobDetailsCompName"/>
+            //WFH
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Work From Home"
+                android:id="@+id/jobDetailsWFH"
+                android:layout_below="@+id/jobDetailsCompName"
+                android:layout_toRightOf="@+id/ican_home"
+                android:layout_marginTop="10dp"
+                android:textSize="12dp"
+                android:layout_marginLeft="5dp"/>
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ican_play"
+                android:id="@+id/ican_play"
+                android:layout_below="@+id/ican_home"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Immediatly"
+                android:layout_below="@id/ican_home"
+                android:layout_toRightOf="@+id/ican_play"
+                android:textSize="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/jobDetailStartDate"/>
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/ican_duration"
+                android:src="@drawable/ican_duration"
+                android:layout_below="@+id/ican_home"
+                android:layout_toRightOf="@+id/jobDetailStartDate"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6 Month"
+                android:layout_below="@id/ican_home"
+                android:layout_toRightOf="@+id/ican_duration"
+                android:textSize="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/jobDetailsDuration"/>
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/ican_salary"
+                android:src="@drawable/ican_payment"
+                android:layout_below="@+id/ican_play"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Based on Performance"
+                android:layout_below="@id/ican_play"
+                android:layout_toRightOf="@+id/ican_play"
+                android:textSize="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/jobDetailsSalary"/>
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/ican_time"
+                android:src="@drawable/ican_time"
+                android:layout_below="@+id/ican_salary"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Part Time Allowed"
+                android:layout_below="@id/ican_salary"
+                android:layout_toRightOf="@+id/ican_play"
+                android:textSize="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/jobDetailsPartTime"/>
+
+
+
+           </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@drawable/border_up"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/jobDetailsAboutComp"
+                    android:text="About Tony Creation"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Website"
+                    android:layout_below="@id/jobDetailsAboutComp"
+                    android:textSize="11dp"
+                    android:id="@+id/jobDetailsWebseite"
+                    android:textColor="#0A7BD5"/>
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_below="@id/jobDetailsAboutComp"
+                    android:layout_toRightOf="@id/jobDetailsWebseite"
+                    android:layout_marginLeft="3dp"
+                    android:src="@drawable/arrow_up"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/jobDetailsAboutCompContent"
+                    android:layout_below="@+id/jobDetailsWebseite"
+                    android:text="Freshers Live is online campus recruitment system. This application provides online plate	form to company hire employee online easily. And students get internship easily he not	worries to go company to company for searching job or internship. Students and company	first need to register for use this android application. If admin accept registration request 	then company or students can login."
+                    android:layout_marginTop="10dp"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/jobDetailsRespoTitle"
+                    android:layout_below="@+id/jobDetailsAboutCompContent"
+                    android:text="Responsibility"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/jobDetailsRespo"
+                    android:layout_below="@+id/jobDetailsRespoTitle"
+                    android:text="Freshers Live is online campus recruitment system. This application provides online plate	form to company hire employee online easily. And students get internship easily he not	worries to go company to company for searching job or internship. Students and company	first need to register for use this android application. If admin accept registration request 	then company or students can login."
+                    android:layout_marginTop="10dp"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/jobDetailsSkillTitle"
+                    android:layout_below="@+id/jobDetailsRespo"
+                    android:text="Skills Requery"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/jobDetailsSkill"
+                    android:layout_below="@+id/jobDetailsSkillTitle"
+                    android:text="JAVA, C#, Python, .net"
+                    android:layout_marginTop="10dp"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/jobDetailsOpeningTitle"
+                    android:layout_below="@+id/jobDetailsSkill"
+                    android:text="Number of Opening"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/jobDetailsOpening"
+                    android:layout_below="@+id/jobDetailsOpeningTitle"
+                    android:text="4"
+                    android:layout_marginTop="10dp"
+                    android:textSize="12dp"/>
+
+            </RelativeLayout>
+    </LinearLayout>
+
+
+</ScrollView>
