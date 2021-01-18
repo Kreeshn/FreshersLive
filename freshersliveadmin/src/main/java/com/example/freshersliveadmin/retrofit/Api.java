@@ -44,4 +44,12 @@ public interface Api {
     @GET("fetchRejectedStudentsDetails.php")
     Call<FetchStudentsDetails> fetchRejectedStudentsDetails();
 
+    @FormUrlEncoded
+    @POST("AcceptRejectStdReq.php")
+    Call<CompApproveRejectResponse> stdApproveReject(
+            @Field("sid") int sid,
+            @Field("status") int status
+    );
+
+
 }
