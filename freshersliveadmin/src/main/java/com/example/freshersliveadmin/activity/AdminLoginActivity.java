@@ -91,5 +91,13 @@ public class AdminLoginActivity extends AppCompatActivity {
             }
         });
     }
+    protected void onStart() {
+        super.onStart();
+        if(sharedPrefManager.isCompLogin()){
+            Intent intent = new Intent(AdminLoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
 
 }
