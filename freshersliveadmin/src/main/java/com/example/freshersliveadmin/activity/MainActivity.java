@@ -44,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
         toggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        CompReqFragment compReqFragment = new CompReqFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.fragmentContainer,compReqFragment).commit();
+
         navigationView = (NavigationView) findViewById(R.id.compNavigationView);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
