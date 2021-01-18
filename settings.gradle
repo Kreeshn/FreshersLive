@@ -1,3 +1,4 @@
+include ':fresherslivestudent'
 include ':freshersliveadmin'
 include ':app'
 rootProject.name = "Freshers Live Company"
