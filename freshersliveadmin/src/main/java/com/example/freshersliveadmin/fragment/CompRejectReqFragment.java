@@ -38,11 +38,11 @@ public class CompRejectReqFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         recyclerView=view.findViewById(R.id.rejectedCompReqRecylerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        //retrofit
         Call<FetchCompDetailsResponse> call = RetrofitClient
                 .getInstance()
                 .getApi()

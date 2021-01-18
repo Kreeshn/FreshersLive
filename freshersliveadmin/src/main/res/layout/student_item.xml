@@ -23,14 +23,14 @@
             android:textSize="20sp"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:id="@+id/CompName"
-            android:text="Full Stack Development"/>
+            android:id="@+id/stdName"
+            android:text="vikram"/>
         <TextView
-            android:layout_below="@+id/CompName"
+            android:layout_below="@+id/stdName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/CompEmail"
-            android:text="SM Consultant"/>
+            android:id="@+id/stdEmail"
+            android:text="vik@gmail.com"/>
 
     </LinearLayout>
     <LinearLayout
@@ -44,7 +44,7 @@
             android:layout_height="30dp"
             android:src="@drawable/icon_approved"
             android:background="@drawable/btnborder"
-            android:id="@+id/imgApprove"/>
+            android:id="@+id/imgApprovestd"/>
 
         <ImageView
             android:layout_width="50dp"
@@ -52,10 +52,7 @@
             android:layout_height="30dp"
             android:src="@drawable/icon_reject"
             android:background="@drawable/btnborder"
-            android:id="@+id/imgReject"/>
-
-
-
+            android:id="@+id/imgRejectstd"/>
     </LinearLayout>
 
 

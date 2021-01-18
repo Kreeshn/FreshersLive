@@ -42,7 +42,6 @@ public class CompAcceptReqFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        //retrofit
         Call<FetchCompDetailsResponse> call = RetrofitClient
                 .getInstance()
                 .getApi()

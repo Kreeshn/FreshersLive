@@ -34,9 +34,6 @@ public class CompPenddingReqFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_comp_pendding_req, container, false);
         return view;
-
-
-
     }
 
     @Override
